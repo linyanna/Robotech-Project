@@ -79,7 +79,7 @@ void setup() {
             for (i=0; i < 16; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
               
             lcd.setCursor(16,0);
@@ -87,7 +87,7 @@ void setup() {
             for (i=16; i < 19; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
 }
 
@@ -149,7 +149,7 @@ void loop(){
               for (i=0; i < 16; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
               
               lcd.setCursor(16,0);
@@ -157,7 +157,7 @@ void loop(){
               for (i=16; i < 19; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
               } 
 
@@ -192,7 +192,7 @@ void loop(){
               for (i=0; i < 16; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
               
               lcd.setCursor(16,0);
@@ -200,7 +200,7 @@ void loop(){
               for (i=16; i < 19; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
             } 
             
@@ -234,7 +234,7 @@ void loop(){
               for (i=0; i < 16; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
               
               lcd.setCursor(16,0);
@@ -242,7 +242,7 @@ void loop(){
               for (i=16; i < 19; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
             } 
             
@@ -276,7 +276,7 @@ void loop(){
               for (i=0; i < 16; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
               
               lcd.setCursor(16,0);
@@ -284,7 +284,7 @@ void loop(){
               for (i=16; i < 19; i++)
               {
                 lcd.print(foo[i]);
-                delay(300);
+                delay(200);
               }
             }
             
