@@ -15,7 +15,7 @@ LiquidCrystal lcd(19, 23, 18, 17, 16, 15);
 
 
 // Replace with your network credentials
-char* ssid = "J.C";
+const char* ssid = "J.C";
 const char* password = "password";
 
 // Set web server port number to 80
@@ -32,18 +32,6 @@ String output29State = "off";
 char foo[] = "How are you today? "; 
 int len = strlen(foo);
 int i = 0;
-char sad[] = "Are you feeling sad? Here is a song for you <3 "; 
-int len2 = strlen(sad);
-int s = 0;
-char calm[] = "Do you want to relax? Here is a song for you <3 "; 
-int len3 = strlen(calm);
-int c = 0;
-char angry[] = "Are you stressed? Here is a song for you <3 "; 
-int len4 = strlen(angry);
-int a = 0;
-char happy[] = "Are you happy? Here is a song for you <3 "; 
-int len5 = strlen(happy);
-int h = 0;
 
 // Assign output variables to GPIO pins
 const int output26 = 32;
@@ -139,23 +127,16 @@ void loop(){
               digitalWrite(output27, LOW);
               digitalWrite(output28, LOW);
               digitalWrite(output29, LOW);
-              lcd.begin(16, 2);
-              lcd.setCursor(0,0);
-              for (s=0; s < 16; s++)
-              {
-                lcd.print(sad[s]);
+              lcd.begin(16, 1);
+              lcd.print("Are you sad? Here's a song for you <3 ");
+              delay(1000);
+
+              for (int positionCounter = 0; positionCounter < 22; positionCounter++) {
+              // scroll one position left:
+                lcd.scrollDisplayLeft();
+              // wait a bit:
                 delay(300);
-              }
-              
-              lcd.setCursor(16,0);
-              lcd.autoscroll();
-              for (s=16; s < 47; s++)
-              {
-                lcd.print(sad[s]);
-                delay(300);
-              }
-              lcd.noAutoscroll();
-              
+              }              
               output27State = "off";
               output28State = "off";
               output29State = "off";              
@@ -192,21 +173,15 @@ void loop(){
               output27State = "on";
               digitalWrite(output27, HIGH);
               lcd.begin(16, 2);
-              lcd.setCursor(0,0);
-              for (c=0; c < 16; c++)
-              {
-                lcd.print(calm[c]);
+              lcd.print("Let's relax. Here's a song for you <3 ");
+              delay(1000);
+              for (int positionCounter = 0; positionCounter < 22; positionCounter++) {
+              // scroll one position left:
+                lcd.scrollDisplayLeft();
+              // wait a bit:
                 delay(300);
               }
-              
-              lcd.setCursor(16,0);
-              lcd.autoscroll();
-              for (c=16; c < 48; c++)
-              {
-                lcd.print(calm[c]);
-                delay(300);
-              }
-              lcd.noAutoscroll();
+
               
             } else if (header.indexOf("GET /27/off") >= 0) {
               Serial.println("GPIO 27 off");
@@ -239,21 +214,16 @@ void loop(){
               output27State = "off";
               output29State = "off";
               digitalWrite(output28, HIGH);
-              lcd.begin(16, 2);
-              lcd.setCursor(0,0);
-              for (h=0; h < 16; h++)
-              {
-                lcd.print(happy[h]);
+              lcd.begin(16, 1);
+              lcd.print("Happy? Here's a song for you <3 ");
+              delay(1000);
+
+              for (int positionCounter = 0; positionCounter < 15; positionCounter++) {
+              // scroll one position left:
+                lcd.scrollDisplayLeft();
+              // wait a bit:
                 delay(300);
-              }
-              
-              lcd.setCursor(16,0);
-              lcd.autoscroll();
-              for (h=16; h < 41; h++)
-              {
-                lcd.print(happy[h]);
-                delay(300);
-              }
+              }  
               lcd.noAutoscroll();
             } else if (header.indexOf("GET /28/off") >= 0) {
               Serial.println("GPIO 28 off");
@@ -286,21 +256,16 @@ void loop(){
               output27State = "off";
               output28State = "off";
               output26State = "off";
-              lcd.begin(16, 2);
-              lcd.setCursor(0,0);
-              for (a=0; a < 16; a++)
-              {
-                lcd.print(angry[a]);
+              lcd.begin(16, 1);
+              lcd.print("Stressed? Here's a song for you <3 ");
+              delay(1000);
+
+              for (int positionCounter = 0; positionCounter < 19; positionCounter++) {
+              // scroll one position left:
+                lcd.scrollDisplayLeft();
+              // wait a bit:
                 delay(300);
-              }
-              
-              lcd.setCursor(16,0);
-              lcd.autoscroll();
-              for (a=16; a < 44; a++)
-              {
-                lcd.print(angry[a]);
-                delay(300);
-              }
+              }  
               lcd.noAutoscroll();
             } else if (header.indexOf("GET /29/off") >= 0) {
               Serial.println("GPIO 29 off");
